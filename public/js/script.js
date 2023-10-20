@@ -8,7 +8,7 @@ window.onload = scrollToTop()
 
 //DOM Elements
 const menuTrigger = document.querySelector(".bars")
-const enterBtn =document.getElementById("enterBtn")
+const enterBtn = document.querySelector(".enter-button")
 const movie = document.querySelector(".movie")
 const bg = document.querySelector(".bg")
 
@@ -83,7 +83,7 @@ $(window).scroll(function () {
 });
 
 console.log("item 2")
-
+console.log(enterBtn)
 enterBtn.children[0].addEventListener("click", scrollWin)
 
 function scrollWin() {

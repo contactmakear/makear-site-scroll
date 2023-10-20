@@ -4,7 +4,7 @@ export default class Perspective{
     constructor() {
         this.container = document.querySelector(".box-elements")
         this.inner = document.querySelector(".inner")
-        this.events()
+        //this.events()
         
     }
 

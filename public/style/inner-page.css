@@ -103,6 +103,7 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
 }
 .project-thumbnail {
+    cursor: pointer;
     width: 235px;
     height: 350px;
     /* background-size: contain;
@@ -118,7 +119,7 @@ section {
     display: flex;
     justify-content: center;
 }
-.case-study .wrapper button {
+.case-study .wrapper .project-btn {
     width: 235px;
     height: 100%;
     display: flex;
@@ -196,7 +197,7 @@ section {
     text-decoration: none;
     border-bottom: 1px solid #ffff;
 }
-.case-study .wrapper button.hide-me {
+.case-study .wrapper .hide-me {
     display: none;
 }
 .email-form {
@@ -337,5 +338,9 @@ section {
     }
     .step-4 .bg img {
         height: unset;
+    }
+    .client-logos{
+        justify-content: center;
+        padding: 35px 0px;
     }
 }
