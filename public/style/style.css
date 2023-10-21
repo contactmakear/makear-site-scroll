@@ -124,6 +124,7 @@ nav {
 }
 .ar-example-video {
     display: flex;
+    justify-content: center;
 }
 .ar-example-video video {
     width: 80%;
@@ -133,6 +134,9 @@ nav {
     border-radius: 20px;
     box-shadow: 6px 10px 13px rgba(0,0,0,0.3);
 }
+.ar-example-video h1 {
+    color: #DF1D4E;
+}
 .enter-button {
     display: flex;
     justify-content: center;
@@ -141,6 +145,7 @@ nav {
 }
 .enter-button h1 {
     color: #fff;
+    text-align: center;
 }
 .enter-button button {
     background: none;

@@ -197,6 +197,7 @@ section {
 }
 .stats-section h5 {
     line-height: 30px;
+    text-align: center;
 }
 .client-section {
     display: flex;
