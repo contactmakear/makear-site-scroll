@@ -1,5 +1,15 @@
 <%- include('includes/header.ejs') %>
 <%- include('includes/navbar.ejs') %>
+<div class="container">
+    <% success.forEach(function(message) { %>
+        <div class="alert alert-success text-center"><%= message %></div>
+    <% }) %>
+    
+    <% errors.forEach(function(message) { %>
+        <div class="alert alert-success text-center"><%= message %></div>
+    <% }) %>
+</div>
+
 <header>
     <div class="container container-rc">
         <div class="header-title">
@@ -186,11 +196,16 @@
                             <img src="assets/images/vodafone-case-study-thumbnail.png" alt="vodafone-case-study-thumbnail.png">
                         </div>
                         <div class="project-btn hide-me">
-                            <span id="closeIcon1">close icon</span>
+                            <button id="closeIcon1" type="button" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
                             <h5>project title</h5>
                             <form action="/view-case-study" method="POST">
-                                <input type="email" name="email" placeholder="Email" required>
-                                <button>Submit</button>
+                                <div class="form-content">
+                                    <input type="hidden" name="case-study" value="first">
+                                    <input type="email" name="email" placeholder="Email" required>
+                                    <button>Submit</button>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -201,11 +216,16 @@
                             <img src="assets/images/worldmap-ar-thumbnail.png" alt="worldmap-ar-thumbnail.png">
                         </div>
                         <div class="project-btn hide-me">
-                            <span id="closeIcon2">close icon</span>
+                            <button id="closeIcon2" type="button" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
                             <h5>project title</h5>
                             <form action="/view-case-study" method="POST">
-                                <input type="email" name="email" placeholder="Email" required>
-                                <button>Submit</button>
+                                <div class="form-content">
+                                    <input type="hidden" name="case-study" value="second">
+                                    <input type="email" name="email" placeholder="Email" required>
+                                    <button>Submit</button>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -216,11 +236,16 @@
                             <img src="assets/images/nescafe-gold-ar-thumbnail.png" alt="nescafe-gold-ar-thumbnail.png">
                         </div>
                         <div class="project-btn hide-me">
-                            <span id="closeIcon3">close icon</span>
+                            <button id="closeIcon3" type="button" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
                             <h5>project title</h5>
                             <form action="/view-case-study" method="POST">
-                                <input type="email" name="email" placeholder="Email" required>
-                                <button>Submit</button>
+                                <div class="form-content">
+                                    <input type="hidden" name="case-study" value="third">
+                                    <input type="email" name="email" placeholder="Email" required>
+                                    <button>Submit</button>
+                                    </div>
                             </form>
                         </div>
                     </div>

@@ -19,3 +19,30 @@ exports.viewEmailAddress = function(req, res) {
         res.send(err)
     })
 }
+
+exports.requestCaseStudy = function(req, res) {
+    let mailer = new Mailer(req.body)
+    mailer.sendRequest().then(() => {
+        req.flash("success", "We will share the case study on your email.")
+        req.session.save(function() {
+            res.render('why-makear', {success: req.flash('success')})
+        })
+    }).catch((err) => {
+        req.flash("errors", "Try again later")
+        req.session.save(function() {
+            res.render("why-makear", {errors: req.flash('errors')})
+        })
+        res.send("something wrong happened.")
+    })
+}
+
+exports.viewSubmittedCaseStudy = function(req, res) {
+    Mailer.findCaseStudyEmails().then((result) => {
+        res.render('email-list', {caseStudyData: result})
+    }).catch((err) => {
+        req.flash("errors", "Something went wrong please try again later")
+        req.session.save(function() {
+            res.render('email-list', {errors: req.flash('errors')})
+        })
+    })
+}

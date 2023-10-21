@@ -1,5 +1,20 @@
+
+<div class="container">
+    <% success.forEach(function(message) { %>
+        <div class="alert alert-success text-center"><%= message %></div>
+    <% }) %>
+    
+    <% errors.forEach(function(message) { %>
+        <div class="alert alert-success text-center"><%= message %></div>
+    <% }) %>
+</div>
+
 <form action="/view-emails" method="POST">
     <button>View submitted email address</button>
+</form>
+
+<form action="/view-case-study-email-address" method="POST">
+    <button>View case study requests</button>
 </form>
 
 <% if(locals.data) { %>
@@ -16,6 +31,16 @@
             </li>
             <li>
                 <%= list.message %>
+            </li>
+        </ul>
+    <% }) %>
+<% } %>
+
+<% if(locals.caseStudyData) { %>
+    <% locals.caseStudyData.map((list) => { %>
+        <ul>
+            <li>
+                <%= list.email %>
             </li>
         </ul>
     <% }) %>

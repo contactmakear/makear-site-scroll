@@ -35,5 +35,7 @@ router.get('/view-email-address', passwordProtected, (req, res) => {
 
 router.post('/send-email', emailController.sendEmailAddress)
 router.post('/view-emails', emailController.viewEmailAddress)
+router.post('/view-case-study', emailController.requestCaseStudy)
+router.post('/view-case-study-email-address', emailController.viewSubmittedCaseStudy)
 
 module.exports = router

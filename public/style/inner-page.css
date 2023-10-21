@@ -103,6 +103,7 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
 }
 .project-thumbnail {
+    position: relative;
     cursor: pointer;
     width: 235px;
     height: 350px;
@@ -142,6 +143,48 @@ section {
 .case-study .wrapper button h5 {
     color: #DF1D4E;
     text-transform: uppercase;
+}
+.project-btn button.close{
+    background: none;
+    border: none;
+    font-size: 33px;
+    position: absolute;
+    right: 10px;
+    top: 0px;
+}
+.project-btn button span {
+    color: #DF1D4E;
+}
+.project-btn h5 {
+    color: #DF1D4E;
+    text-transform: capitalize;
+}
+.form-content {
+    display: flex;
+    flex-direction: column;
+}
+.form-content input {
+    padding: 0px 10px;
+    margin: 15px 0px;
+    height: 45px;
+    background: #F1F1F1;
+    border: none;
+    border-radius: 8px;
+    border-radius: 10px;
+    background: #F1F1F1;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25) 
+}
+.form-content input::placeholder {
+    font-family: "GothamBook";
+}
+.form-content button {
+    border: none;
+    border-radius: 10px;
+    background: #DF1D4E;
+    color: #fff;
+    height: 38px;
+    width: 50%;
+    margin: 0px auto;
 }
 .stats-section {
     padding: 25px 0px;
