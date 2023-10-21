@@ -30,6 +30,13 @@ Mailer.prototype.cleanUp = function() {
     }
 }
 
+Mailer.prototype.CaseStudyEmailClenup = function() {
+    if(typeof(this.data.email) != "string") {this.data.email = ""}
+    this.data = {
+        email: this.data.email.trim().toLowerCase()
+    }
+}
+
 Mailer.prototype.register = function() {
     
     return new Promise(async (resolve, reject) => {
@@ -55,8 +62,16 @@ Mailer.findEmails = function() {
 
 Mailer.prototype.sendRequest = function() {
     return new Promise(async(resolve, reject) => {
-        let response = await caseStudySubmission.insertOne(this.data)
-        resolve(response)
+        this.validate()
+        this.CaseStudyEmailClenup()
+
+        if(!this.errors.length) {
+            let response = await caseStudySubmission.insertOne(this.data)
+            resolve(response)
+        } else {
+            reject(this.errrors)
+        }
+        
     })
 }
 

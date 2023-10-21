@@ -113,6 +113,7 @@ section {
     background-image: url('../assets/images/vodafone-case-study-thumbnail.png'); */
 }
 .project-thumbnail img {
+    border-radius: 25px;
     width: 100%;
 }
 .case-study .wrapper {
@@ -158,6 +159,7 @@ section {
 .project-btn h5 {
     color: #DF1D4E;
     text-transform: capitalize;
+    text-align: center;
 }
 .form-content {
     display: flex;
@@ -176,6 +178,10 @@ section {
 }
 .form-content input::placeholder {
     font-family: "GothamBook";
+}
+.form-content label {
+    color: #DF1D4E;
+    text-align: center;
 }
 .form-content button {
     border: none;
