@@ -137,6 +137,9 @@ nav {
 .ar-example-video h1 {
     color: #DF1D4E;
 }
+.ar-example-video h1 span {
+    font-family: 'GothamBook'
+}
 .enter-button {
     display: flex;
     justify-content: center;
@@ -156,6 +159,9 @@ nav {
     width: 250px;
     padding: 15px;
     transition: .5s;
+    border: none;
+    font-family: 'GothamBold';
+    letter-spacing: 3px;
 }
 .enter-button button:hover {
     color: #fff;
