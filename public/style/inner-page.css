@@ -435,4 +435,13 @@ section {
         justify-content: center;
         padding: 35px 0px;
     }
+    .two-col {
+        flex-direction: column;
+    }
+    .row-with-four {
+        display: block;
+    }
+    .video-sidebar {
+        width: auto;
+    }
 }
