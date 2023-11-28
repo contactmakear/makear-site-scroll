@@ -45,3 +45,12 @@ videos.forEach(
         }
     }
 )
+
+const isMobile = navigator.userAgentData.mobile;
+if(isMobile) {
+    alert("this device is mobile.")
+}
+
+if(!isMobile) {
+    alert("this device is not mobile.")
+}
