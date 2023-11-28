@@ -43,9 +43,5 @@ videos.forEach(
             video.pause();
             }
         }
-
-        pauseButton.addEventListener('click', () => {
-            video.pause()
-        })
     }
 )
