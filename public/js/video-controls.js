@@ -30,6 +30,7 @@ function isVideoInFullscreen() {
 if( isMobile.any() ) {
     videos.forEach(
         video => {
+            
             // Event listener for fullscreen change
             document.addEventListener('fullscreenchange', handleFullscreenChange)
             document.addEventListener('webkitfullscreenchange', handleFullscreenChange)
@@ -50,9 +51,9 @@ if( isMobile.any() ) {
         video => {
             const overlay = video.nextElementSibling
             const playButton = overlay.querySelector('.play-button')
-            const pauseButton = overlay.querySelector('.pause-button')
-            const fullScreenButton = overlay.querySelector('.fullscreen-button')
-    
+            // const pauseButton = overlay.querySelector('.pause-button')
+            // const fullScreenButton = overlay.querySelector('.fullscreen-button')
+
             // show overlay
             video.parentElement.addEventListener('mouseenter', () => {
                 overlay.classList.remove("invisible")
@@ -63,7 +64,7 @@ if( isMobile.any() ) {
                 overlay.classList.remove("visible")
                 overlay.classList.add("invisible") 
             })
-    
+
             // play video and turn full screen
             playButton.addEventListener('click', () => {
                 video.play()

@@ -354,6 +354,8 @@ section {
     display: block;
     z-index:2147483647;
 }
+
+/* for mobile devices */
 @media screen and (max-width: 414px) {
     .step-2-content {
         height: 100%;
@@ -443,5 +445,8 @@ section {
     }
     .video-sidebar {
         width: auto;
+    }
+    .video-child video::-webkit-media-controls-panel {
+        display: block!important;
     }
 }

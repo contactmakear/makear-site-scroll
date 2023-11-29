@@ -1,7 +1,7 @@
 import Activate from './modules/activate'
 import Perspective from './modules/perspective'
 
-new Activate()
+//new Activate()
 new Perspective()
 
 const projectThumbnail1 = document.querySelector(".project-thumbnail-1")

@@ -1,7 +1,6 @@
 // Function to scroll to the top of the page
 function scrollToTop() {
     window.scrollTo(0, 0);
-    console.log("scrolled to top")
 }
 //add functionality if user is revisting then it won't scroll to top.
 window.onload = scrollToTop()
@@ -81,9 +80,6 @@ $(window).scroll(function () {
   }
   lasScrTop = winTop;
 });
-
-console.log("item 2")
-console.log(enterBtn)
 enterBtn.children[0].addEventListener("click", scrollWin)
 
 function scrollWin() {
