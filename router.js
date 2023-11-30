@@ -33,7 +33,7 @@ router.get('/view-email-address', passwordProtected, (req, res) => {
     res.render('email-list')
 })
 
-router.post('/send-email', emailController.sendEmailAddress)
+router.post('/send-email', emailController.sendEmailToOutlook)
 router.post('/view-emails', emailController.viewEmailAddress)
 router.post('/view-case-study', emailController.requestCaseStudy)
 router.post('/view-case-study-email-address', emailController.viewSubmittedCaseStudy)
