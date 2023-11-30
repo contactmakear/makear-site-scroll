@@ -1,7 +1,6 @@
 
 const dataCollection = require('../db').db().collection("data")
 const caseStudySubmission = require('../db').db().collection("caseStudyLeads")
-const nodemailer = require("nodemailer")
 const validator = require('validator')
 
 const dotenv = require('dotenv').config()
@@ -80,35 +79,6 @@ Mailer.findCaseStudyEmails = function() {
     return new Promise(async(resolve, reject) => {
         let caseStudyData = await caseStudySubmission.find().toArray()
         resolve(caseStudyData)
-    })
-}
-
-const transporter = nodemailer.createTransport({
-    host: "smtp-mail.outlook.com",
-    port: 587,
-    secure: true,
-    auth: {
-        user: "rachit.chaudhary@makear.ai",
-        pass: "OMARJOHN,callme890"
-    },
-})
-
-const mailDetails = {
-    from: '"Fred Foo 👻" <rachit.chaudhary@makear.ai>', // sender address
-    to: "rachit.chaudhary@impresariopromotions.com", // list of receivers
-    subject: "Hello ✔", // Subject line
-    text: "Hello world?", // plain text body
-    html: "<b>Hello world?</b>", // html body
-}
-
-Mailer.prototype.sendEmailsExpress = function() {
-
-    return new Promise(async (resolve, reject) => {
-        async function main() {
-            const info = await transporter.sendMail(mailDetails);
-              console.log("Message sent: %s", info.messageId);
-        }
-        main().catch(console.error);
     })
 }
 
