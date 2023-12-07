@@ -85,3 +85,19 @@ enterBtn.children[0].addEventListener("click", scrollWin)
 function scrollWin() {
   window.scrollBy(0, 620);
 }
+
+// // touch point user select
+// jQuery('body').on('touchstart', function(e){ 
+//   jQuery("input").focusin(function() { 
+//       jQuery("body").css("-webkit-overflow-scrolling", "auto"); 
+//       jQuery("input").css("-webkit-user-select", "text"); 
+//   });
+//   jQuery("input").select(function() {
+//       jQuery("body").css("-webkit-overflow-scrolling", "auto");
+//       jQuery("input").css("-webkit-user-select", "text");
+//   });
+//   jQuery("input").blur(function() {
+//       jQuery("body").css("-webkit-overflow-scrolling", "touch");
+//       jQuery("input").css("-webkit-user-select", "none");
+//   });        
+// });

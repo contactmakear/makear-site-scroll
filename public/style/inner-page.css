@@ -178,6 +178,11 @@ section {
 }
 .form-content input::placeholder {
     font-family: "GothamBook";
+    color: #777;
+}
+.form-content input::placeholder {
+    font-family: sans-serif;
+    color: #777;
 }
 .form-content label {
     color: #DF1D4E;
@@ -272,12 +277,18 @@ section {
     padding: 0px 10px;
     font-family: 'GothamBook';
     color: #000;
+    /* position: fixed !important; */
 }
 .email-form form textarea {
     height: 100px;
 }
 .email-form form textarea::placeholder {
     vertical-align: middle;
+}
+.email-form input::placeholder,
+.email-form textarea::placeholder {
+    font-family: sans-serif;
+    color: #777;
 }
 .name-and-phone,
 .email-input,
