@@ -33,6 +33,7 @@ Mailer.prototype.cleanUp = function() {
 Mailer.prototype.CaseStudyEmailClenup = function() {
     if(typeof(this.data.email) != "string") {this.data.email = ""}
     this.data = {
+        casestudy: this.data.casestudy,
         email: this.data.email.trim().toLowerCase()
     }
 }
