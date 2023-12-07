@@ -23,7 +23,7 @@
         <div class="row d-flex justify-content-center ">
             <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
                 <div class="email-form">
-                    <form action="/send-email" method="POST">
+                    <form id="contactForm" action="/send-email" method="POST">
                         <div class="name-and-phone">
                             <input class="col-6" type="text" name="name" placeholder="Name*" required>
                             <input class="col-12" type="tel" name="phone" placeholder="Phone" id="phone">
@@ -34,7 +34,7 @@
                         <div class="message-area">
                             <textarea class="col-12" name="message" id="" cols="30" rows="3" placeholder="Message"></textarea>
                         </div>
-                        <button class="col-8" id="submitBtn">Submit Details</button>
+                        <button class="g-recaptcha" data-sitekey="6Ld2YCkpAAAAAGBnZHqUKsaWfKa_uKgfqYFUH7Gf" data-callback="onSubmit" id="submitBtn">Submit Details</button>
                     </form>
                 </div>
             </div>
@@ -42,5 +42,11 @@
 
     </div>
 </section>
+
+<footer>
+
+    <p><a href="mailto:contact@makear.ai">contact@makear.ai</a></p>
+
+</footer>
 
 <%- include('includes/footer.ejs') %>

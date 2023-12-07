@@ -86,6 +86,9 @@ function scrollWin() {
   window.scrollBy(0, 620);
 }
 
+function onSubmit(token) {
+  document.getElementById("contactForm").submit();
+}
 // // touch point user select
 // jQuery('body').on('touchstart', function(e){ 
 //   jQuery("input").focusin(function() { 
