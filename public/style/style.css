@@ -635,3 +635,17 @@ screen6-content li h4 span {
 .movie.step-8 .screen7-content {
     transform: scale(1);
 }
+
+/* portfolio card */
+.view-portfolio {
+    position: absolute;
+    z-index: 1;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 0px auto;
+    background: peachpuff;
+    font-family: 'GothamBold';
+    padding: 15px 0px;
+    font-size: 17px;
+}
