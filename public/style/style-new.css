@@ -1,0 +1,278 @@
+@font-face {
+  font-family: "AeonikTRIAL-Regular";
+  src: url("../assets/fonts/AeonikTRIAL-Regular.otf");
+}
+@font-face {
+  font-family: "AeonikTRIAL-Bold";
+  src: url("../assets/fonts/AeonikTRIAL-Bold.otf");
+}
+@font-face {
+  font-family: "AeonikTRIAL-Light";
+  src: url("../assets/fonts/AeonikTRIAL-Light.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "AeonikTRIAL-Regular";
+  transition: transform 0.3s ease;
+}
+
+:root {
+  --bg-color: #d6d6d6;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+/* ! Navbar Start  */
+
+.container {
+  width: 100vw;
+  padding: 10px;
+  margin: 50px auto;
+  /* overflow: hidden; */
+}
+
+.navbar {
+  width: 95vw;
+  max-width: 1140px;
+  /* width: 1140px; */
+  margin: auto;
+  /* width: 100%; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.headline {
+  max-width: 16.5rem;
+}
+
+.headline p {
+  font-size: 1.5rem;
+  color: #090909;
+}
+
+.btn {
+  padding: 15px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 3.4rem;
+  margin: 8px;
+  cursor: pointer;
+  font-family: "AeonikTRIAL-Bold";
+  color: #2b2e3a;
+  position: relative;
+  overflow: hidden;
+}
+
+.mailBtn {
+  background-color: #2b2e3a;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+
+  transition: background-color 0.3s ease;
+}
+
+.arrow-icon img {
+  transform: translateX(-50px);
+  transition: transform 0.3s ease;
+  visibility: hidden;
+}
+
+.mailBtn:hover {
+  background-color: #0016ec;
+}
+
+.btnText {
+  font-family: "AeonikTRIAL-Bold";
+}
+
+.mailBtn .btnText {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.mailBtn:hover .btnText {
+  transform: translateX(20px);
+}
+
+.mailBtn:hover .single-dot {
+  visibility: hidden;
+}
+
+.mailBtn:hover .arrow-icon img {
+  transform: translateX(0px);
+  visibility: visible;
+}
+
+.single-dot {
+  position: relative;
+  top: -2px;
+  margin-left: 12px;
+}
+
+.double-dot {
+  position: relative;
+  top: -2px;
+  margin-left: 65px;
+}
+
+.openMenu {
+  transform: rotate(-90deg);
+  position: relative;
+  top: -2px;
+}
+
+/* .menuBtn {
+  width: 150px;
+} */
+
+/* .menuBtn .btnText {
+  display: inline-block;
+  position: relative;
+} */
+
+.menuBtn:active .btnText {
+  /* transition: animation 0.4s ease;
+  -webkit-animation: move-up-alternate 0.4s ease forwards;
+  animation: move-up-alternate 0.4s ease forwards; */
+}
+
+.move-up-animations {
+  /* -webkit-animation: move-up-alternate 0.4s ease-in-out;
+  animation: move-up-alternate 0.4s ease-in-out; */
+}
+
+.menuBtn {
+  position: relative;
+  width: 130px;
+}
+
+.menuBtn .menu {
+  font-family: "AeonikTRIAL-Bold";
+  position: absolute;
+  top: 15px;
+  left: 33px;
+  /* transform: translateY(40px); */
+}
+
+.menuBtn .close {
+  font-family: "AeonikTRIAL-Bold";
+  position: absolute;
+  top: 15px;
+  left: 30px;
+  /* transform: translateY(-40px); */
+}
+
+.move-up {
+  transform: translateY(-40px);
+}
+
+.move-down {
+  transform: translateY(40px);
+}
+
+/* ! OVERLAY */
+
+.overlay {
+  width: 250px;
+  position: absolute;
+  top: 90px;
+  right: 10px;
+
+  padding: 16px;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  background-color: white;
+  color: black;
+}
+
+.overlay a {
+  width: 90%;
+
+  margin: 2px auto;
+  padding: 15px 25px;
+  font-size: 1rem;
+  color: black;
+  border-radius: 40px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay a img {
+  position: absolute;
+  right: 20px;
+}
+
+.overlay a:hover {
+  background-color: #e5e7fd;
+}
+
+.activeMenu {
+  pointer-events: none;
+}
+
+.activeDot {
+  top: 22px;
+  right: 25px !important;
+}
+
+.overlay .menuText {
+  display: inline-block;
+  position: relative;
+}
+
+.overlay a img {
+  visibility: hidden;
+  /* transition: visibility 0.3s; */
+}
+.overlay a:hover img {
+  visibility: visible;
+}
+
+.overlay a:hover .menuText {
+  transition: animation 0.3s ease;
+  -webkit-animation: move-up-alternate 5s ease forwards;
+  animation: move-up-alternate 5s ease forwards;
+}
+
+@-webkit-keyframes move-up-alternate {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  51% {
+    transform: translateY(30px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes move-up-alternate {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  51% {
+    transform: translateY(30px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
