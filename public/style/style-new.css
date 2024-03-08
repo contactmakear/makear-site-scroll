@@ -21,6 +21,7 @@
 
 :root {
   --bg-color: #d6d6d6;
+  --primary-color: #0016ec;
 }
 
 body {
@@ -46,6 +47,11 @@ body {
   align-items: center;
   justify-content: space-between;
   position: relative;
+}
+
+.site-logo a img {
+  position: relative;
+  z-index: 2;
 }
 
 .headline {
@@ -86,7 +92,7 @@ body {
 }
 
 .mailBtn:hover {
-  background-color: #0016ec;
+  background-color: var(--primary-color);
 }
 
 .btnText {
@@ -203,7 +209,15 @@ body {
   color: black;
 }
 
-.overlay a {
+.overlay-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.overlay-container a {
   width: 90%;
 
   margin: 2px auto;
@@ -233,6 +247,7 @@ body {
   top: 22px;
   right: 25px !important;
   visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .overlay .menuText {
@@ -242,10 +257,13 @@ body {
 
 .overlay a img {
   visibility: hidden;
-  /* transition: visibility 0.3s; */
+  opacity: 0;
+  transition: visibility 0.3s;
 }
 .overlay a:hover img {
   visibility: visible;
+  opacity: 1;
+  transition: opacity 0.8s;
 }
 
 /* .overlay a:hover .menuText {
