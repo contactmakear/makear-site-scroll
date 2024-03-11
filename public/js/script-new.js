@@ -26,11 +26,14 @@ function updateOverlayBackgroundColor() {
     if (openMenu) {
       menuOverLayContainer.style.backgroundColor = primaryColor;
       document.body.style.backgroundColor = primaryColor;
+      siteLogoPaths.forEach((path) => {
+        path.setAttribute("fill", bgColor);
+      });
     } else if (!openMenu) {
       menuOverLayContainer.style.backgroundColor = "transparent";
       document.body.style.backgroundColor = bgColor;
       siteLogoPaths.forEach((path) => {
-        path.setAttribute("fill", bgColor);
+        path.setAttribute("fill", "#2B2E3A");
       });
     }
   } else if (window.innerWidth > 812) {
