@@ -50,7 +50,7 @@ body {
   position: relative;
 }
 
-.site-logo a img {
+.site-logo a svg {
   position: relative;
   z-index: 2;
 }
@@ -276,14 +276,14 @@ body {
 
 .moveUpAnimation {
   transition: animation 0.3s cubic-bezier(0.35, 0, 0, 1);
-  -webkit-animation: move-up .25s cubic-bezier(0.35, 0, 0, 1);
-  animation: move-up .25s cubic-bezier(0.35, 0, 0, 1);
+  -webkit-animation: move-up 0.25s cubic-bezier(0.35, 0, 0, 1);
+  animation: move-up 0.25s cubic-bezier(0.35, 0, 0, 1);
 }
 
 .reverseMoveUpAnimation {
   transition: animation 0.3s cubic-bezier(0.35, 0, 0, 1);
-  -webkit-animation: reverse-move-up .25s cubic-bezier(0.35, 0, 0, 1);
-  animation: reverse-move-up .25s cubic-bezier(0.35, 0, 0, 1);
+  -webkit-animation: reverse-move-up 0.25s cubic-bezier(0.35, 0, 0, 1);
+  animation: reverse-move-up 0.25s cubic-bezier(0.35, 0, 0, 1);
 }
 
 @-webkit-keyframes move-up {

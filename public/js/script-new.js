@@ -6,7 +6,8 @@ const bgColor = getComputedStyle(document.documentElement).getPropertyValue(
   "--bg-color"
 );
 
-const siteLogo = document.querySelector(".site-logo a img ");
+const siteLogo = document.querySelector(".site-logo a svg ");
+const siteLogoPaths = siteLogo.querySelectorAll("path");
 const menuBtn = document.querySelector(".menuBtn");
 const menu = menuBtn.querySelector("#menuBtn-menu");
 const close = menuBtn.querySelector("#menuBtn-close");
@@ -24,15 +25,20 @@ function updateOverlayBackgroundColor() {
   if (window.innerWidth < 812) {
     if (openMenu) {
       menuOverLayContainer.style.backgroundColor = primaryColor;
+      document.body.style.backgroundColor = primaryColor;
     } else if (!openMenu) {
       menuOverLayContainer.style.backgroundColor = "transparent";
+      document.body.style.backgroundColor = bgColor;
+      siteLogoPaths.forEach((path) => {
+        path.setAttribute("fill", bgColor);
+      });
     }
   } else if (window.innerWidth > 812) {
-    if (openMenu) {
-      menuOverLayContainer.style.backgroundColor = "transparent";
-    } else {
-      menuOverLayContainer.style.backgroundColor = "transparent";
-    }
+    menuOverLayContainer.style.backgroundColor = "transparent";
+    document.body.style.backgroundColor = bgColor;
+    siteLogoPaths.forEach((path) => {
+      path.setAttribute("fill", "#2B2E3A");
+    });
   }
 }
 
@@ -52,9 +58,14 @@ function toggleMenu() {
 
     if (window.innerWidth < 812) {
       //! Change
-      siteLogo.style.fill = "white";
+      // siteLogo.style.fill = "white";
+
+      siteLogoPaths.forEach((path) => {
+        path.setAttribute("fill", bgColor);
+      });
+
       menuOverLayContainer.style.backgroundColor = primaryColor;
-      console.log("clickesdd");
+      document.body.style.backgroundColor = primaryColor;
     }
   } else if (!openMenu) {
     if (doubleDotImg.classList.contains("openMenu")) {
@@ -69,10 +80,10 @@ function toggleMenu() {
         "opacity 0.5s ease, visibility 0.5s, transform 0.5s";
     }
     menuOverLayContainer.style.backgroundColor = "transparent";
-
-    if (window.innerWidth < 812) {
-      siteLogo.style.fill = "white";
-    }
+    document.body.style.backgroundColor = bgColor;
+    siteLogoPaths.forEach((path) => {
+      path.setAttribute("fill", "#2B2E3A");
+    });
   }
 }
 

@@ -45,13 +45,13 @@
   }
 
   .overlay-container {
-    width: 100vw;
-    height: 100vh;
     position: absolute;
     top: -65px;
-    left: -18.5px;
+    left: -15px;
+    width: 100dvw;
+    height: 100dvh;
     background-color: transparent;
-    /* overflow: hidden; */
+    /* overflow-x: hidden; */
   }
 
   .overlay {
