@@ -14,7 +14,7 @@
   }
 
   .headline p {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .btns {
@@ -44,30 +44,29 @@
     display: none;
   }
 
-  .overlay {
-    background-color: var(--primary-color);
+  .overlay-container {
     width: 100vw;
     height: 100vh;
-    margin: 0;
-    padding: 0;
-    top: -66px;
-    left: -19px;
-    border-radius: 0;
+    position: absolute;
+    top: -65px;
+    left: -18.5px;
+    background-color: transparent;
+    /* overflow: hidden; */
   }
 
-  .overlay-container {
-    background-color: var(--bg-color);
-    width: 95%;
-    margin: 2px auto;
-    padding: 15px 0;
-
-    position: relative;
-    right: 0px;
-    top: 150px;
+  .overlay {
+    /* transform: scale(0.5); */
+    /* background-color: var(--bg-color); */
+    width: 240px;
+    margin: 0;
+    /* padding: 0; */
+    position: absolute;
+    top: 140px;
+    right: 40px;
     border-radius: 12px;
   }
 
-  .overlay-container a {
+  .overlay a {
     margin: 2px auto;
   }
 }

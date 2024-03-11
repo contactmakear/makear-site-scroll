@@ -1,3 +1,11 @@
+const primaryColor = getComputedStyle(
+  document.documentElement
+).getPropertyValue("--primary-color");
+
+const bgColor = getComputedStyle(document.documentElement).getPropertyValue(
+  "--bg-color"
+);
+
 const siteLogo = document.querySelector(".site-logo a img ");
 const menuBtn = document.querySelector(".menuBtn");
 const menu = menuBtn.querySelector("#menuBtn-menu");
@@ -5,13 +13,30 @@ const close = menuBtn.querySelector("#menuBtn-close");
 const doubleDot = menuBtn.querySelector("#menuBtn-doubleDot");
 const doubleDotImg = menuBtn.querySelector("#menuBtn-img");
 
+const menuOverLayContainer = document.querySelector(".overlay-container");
 const menuOverlay = document.querySelector(".overlay");
 const overlayLinks = document.querySelectorAll(".overlay a");
 
 let openMenu = false;
 let activeMenu = 0;
 
-menuBtn.addEventListener("click", function () {
+function updateOverlayBackgroundColor() {
+  if (window.innerWidth < 812) {
+    if (openMenu) {
+      menuOverLayContainer.style.backgroundColor = primaryColor;
+    } else if (!openMenu) {
+      menuOverLayContainer.style.backgroundColor = "transparent";
+    }
+  } else if (window.innerWidth > 812) {
+    if (openMenu) {
+      menuOverLayContainer.style.backgroundColor = "transparent";
+    } else {
+      menuOverLayContainer.style.backgroundColor = "transparent";
+    }
+  }
+}
+
+function toggleMenu() {
   openMenu = !openMenu;
 
   if (openMenu) {
@@ -21,13 +46,14 @@ menuBtn.addEventListener("click", function () {
 
     menuOverlay.style.opacity = 1;
     menuOverlay.style.visibility = "visible";
-    menuOverlay.style.transform = "translateY(0%)  rotate(0deg)";
+    menuOverlay.style.transform = "translateY(0%)  rotate(0deg) scale(1)";
     menuOverlay.style.transition =
       "opacity 1s ease, visibility .5s , transform 1s";
 
     if (window.innerWidth < 812) {
       //! Change
       siteLogo.style.fill = "white";
+      menuOverLayContainer.style.backgroundColor = primaryColor;
       console.log("clickesdd");
     }
   } else if (!openMenu) {
@@ -38,30 +64,45 @@ menuBtn.addEventListener("click", function () {
 
       menuOverlay.style.opacity = 0;
       menuOverlay.style.visibility = "hidden";
-      menuOverlay.style.transform = "translateY(100%) rotate(8deg)";
+      menuOverlay.style.transform = "translateY(100%) rotate(8deg) scale(0.5)";
       menuOverlay.style.transition =
         "opacity 0.5s ease, visibility 0.5s, transform 0.5s";
     }
+    menuOverLayContainer.style.backgroundColor = "transparent";
+
+    if (window.innerWidth < 812) {
+      siteLogo.style.fill = "white";
+    }
   }
+}
+
+menuBtn.addEventListener("click", toggleMenu);
+
+window.addEventListener("resize", () => {
+  updateOverlayBackgroundColor();
 });
 
 overlayLinks.forEach(function (link) {
   const menuText = link.querySelector(".menuText");
 
-  link.addEventListener("mouseenter", function () {
-    menuText.classList.add("moveUpAnimation");
+  if (window.innerWidth > 812) {
+    link.addEventListener("mouseenter", function () {
+      menuText.classList.add("moveUpAnimation");
 
-    setTimeout(() => {
-      menuText.classList.remove("moveUpAnimation");
-    }, 400);
-  });
+      setTimeout(() => {
+        menuText.classList.remove("moveUpAnimation");
+      }, 400);
+    });
+  }
 
   link.addEventListener("mouseleave", function () {
-    menuText.classList.add("reverseMoveUpAnimation");
+    if (window.innerWidth > 812) {
+      menuText.classList.add("reverseMoveUpAnimation");
 
-    setTimeout(() => {
-      menuText.classList.remove("reverseMoveUpAnimation");
-    }, 400);
+      setTimeout(() => {
+        menuText.classList.remove("reverseMoveUpAnimation");
+      }, 400);
+    }
   });
 });
 
@@ -89,13 +130,11 @@ menuOverlay.addEventListener("click", (e) => {
   }
 });
 
-// function handleViewportWidth() {
+// window.addEventListener("resize", () => {
 //   if (window.innerWidth < 812) {
 //     menuBtn.querySelector("#menuBtn-menu").classList.remove("move-up");
 //     menuBtn.querySelector("#menuBtn-close").classList.remove("move-down");
 //   }
-// }
-
-// window.addEventListener("resize", handleViewportWidth);
+// });
 
 // handleViewportWidth();
