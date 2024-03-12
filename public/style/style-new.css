@@ -148,17 +148,6 @@ body {
   position: relative;
 } */
 
-.menuBtn:active .btnText {
-  /* transition: animation 0.4s ease;
-  -webkit-animation: move-up-alternate 0.4s ease forwards;
-  animation: move-up-alternate 0.4s ease forwards; */
-}
-
-.move-up-animations {
-  /* -webkit-animation: move-up-alternate 0.4s ease-in-out;
-  animation: move-up-alternate 0.4s ease-in-out; */
-}
-
 .menuBtn {
   position: relative;
   width: 130px;
