@@ -47,41 +47,30 @@
         </div>
 
         <div class="btns">
-            <a href="mailto:contact@makear.ai" class="btn mailBtn">
+            <a href="mailto:contact@makear.ai" class="site-btn mailBtn">
                 <span class="arrow-icon"> <img src="assets/images-new/arrow-icon.svg"> </span>
                 <span class="btnText"> LET'S TALK</span>
                 <span class="single-dot"><img src="assets/images-new/single-dot-light.svg"></span>
             </a>
 
-            <button class="btn menuBtn">
+            <button class="site-btn menuBtn">
                 <span id="menuBtn-menu" class="menu ">MENU</span>
                 <span id="menuBtn-close" class="close move-down">CLOSE</span>
 
-                <span id="menuBtn-doubleDot" class="double-dot"><img id="menuBtn-img"
-                        src="assets/images-new/double-dot-icon.svg"></span>
+                <span id="menuBtn-doubleDot" class="double-dot"><img id="menuBtn-img" src="assets/images-new/double-dot-icon.svg"></span>
             </button>
         </div>
 
-        <div class="overlay-container">
+        <div class="overlay-container desktop-menu">
             <div class="overlay">
-                <a class="menuItem activeMenu" href="">
-                    <span class="menuText"> HOME </span>
-                    <img class="activeDot" src="assets/images-new/single-dot-dark.svg">
-                </a>
-
-                <a class="menuItem" href="">
-                    <span class="menuText"> ABOUT US </span>
-                    <img src="assets/images-new/arrow-dark.svg">
-                </a>
-
-                <a class="menuItem" href="">
-                    <span class="menuText"> PROJECTS </span>
-                    <img src="assets/images-new/arrow-dark.svg"> </a>
-
-                <a class="menuItem" href="">
-                    <span class="menuText"> CONTACT </span>
-                    <img src="assets/images-new/arrow-dark.svg"> </a>
+                <%- include('./menu-items.ejs') %>
             </div>
+        </div>
+
+        <div class="mobile-menu">
+            <ul>
+                <%- include('./menu-items.ejs') %>
+            </ul>
         </div>
     </nav>
 </div>
