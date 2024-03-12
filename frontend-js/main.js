@@ -1,8 +1,11 @@
 import Activate from './modules/activate'
 import Perspective from './modules/perspective'
+import Motion from './modules/motion'
 
 //new Activate()
 new Perspective()
+
+new Motion()
 
 const projectThumbnail1 = document.querySelector(".project-thumbnail-1")
 const projectThumbnail2 = document.querySelector(".project-thumbnail-2")
