@@ -7,7 +7,7 @@ async function start() {
   module.exports = client;
   console.log("db conntected");
   const app = require("./server");
-  app.listen(process.env.PORT, "192.168.1.5");
+  app.listen(process.env.PORT);
 }
 
 start();
