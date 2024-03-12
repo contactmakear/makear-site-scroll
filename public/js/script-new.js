@@ -152,3 +152,33 @@ menuOverlay.addEventListener("click", (e) => {
 // });
 
 // handleViewportWidth();
+
+
+// Mobile menu button toggle switch
+const mobileMenuBtn = document.querySelector('.mobile-menu')
+const menuOverlayWindow = document.querySelector('.menu-overlay-window')
+const mobileUiItems = document.querySelector('.mobile-ui-items')
+const mobileContactCta = document.querySelector('.mobile-contact-cta')
+const mobileSiteLogo = document.querySelector('#siteLogo').childNodes
+
+mobileMenuBtn.addEventListener('click', toggleMenuSwitch)
+
+function changeLogoColor() {
+  for (var i=0; i<mobileSiteLogo.length; i++) {
+    if (mobileSiteLogo[i].tagName == "path") {
+      mobileSiteLogo[i].style.fill = "#2B2E3A"
+    }
+  }
+}
+
+function toggleMenuSwitch() {
+  if( menuOverlayWindow.classList.contains('visi') ) {
+    changeLogoColor()
+    menuOverlayWindow.style.backgroundColor = 'unset'
+    mobileUiItems.style.display = 'none'
+    mobileContactCta.style.display = 'none'
+    menuOverlayWindow.classList.remove('visi')
+  } else {
+    alert("show now")
+  }
+}

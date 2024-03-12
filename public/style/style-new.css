@@ -180,7 +180,8 @@ ul {
   padding: 0px;
   margin: 0px;
 }
-nav ul li {
+nav ul li,
+.menu-overlay-window ul li {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -191,7 +192,7 @@ nav ul li {
 .overlay-container {
   width: 240px;
   position: absolute;
-  top: 120px;
+  top: 75px;
   right: 10px;
   /* overflow: hidden; */
   /* background-color: red !important; */
@@ -220,7 +221,8 @@ nav ul li {
   color: black;
 }
 
-.overlay a {
+.overlay a,
+.menu-overlay-window ul li a {
   display: flex;
   justify-content: space-between;
   align-items: center;
