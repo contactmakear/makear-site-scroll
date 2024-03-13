@@ -3,6 +3,7 @@
     padding: 15px;
   }
   .navbar {
+    margin: 10px auto;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
@@ -14,7 +15,7 @@
   }
 
   .headline p {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 
   .btns {
@@ -45,11 +46,10 @@
   }
 
   .overlay-container {
-    position: absolute;
-    top: -65px;
-    left: -15px;
-    width: 100dvw;
-    height: 100dvh;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 85vw;
     background-color: transparent;
     /* overflow-x: hidden; */
   }
@@ -57,16 +57,37 @@
   .overlay {
     /* transform: scale(0.5); */
     /* background-color: var(--bg-color); */
-    width: 240px;
     margin: 0;
     /* padding: 0; */
-    position: absolute;
+    /* position: absolute;
     top: 140px;
-    right: 40px;
+    right: 40px; */
     border-radius: 12px;
   }
 
   .overlay a {
     margin: 2px auto;
+  }
+
+  .mobile-contact-btn {
+    display: flex;
+    width: 100%;
+    border: none;
+    background: #fff;
+    border-radius: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100%) rotate(-8deg);
+    transition: opacity 0.5s ease, visibility 0.5s, transform 0.5s;
+  }
+  .mobile-contact-btn a {
+    text-transform: uppercase;
+    width: 90%;
+    margin: 2px auto;
+    padding: 15px 25px;
+    font-size: 1rem;
+    color: black;
+    border-radius: 40px;
+    text-decoration: none;
   }
 }
