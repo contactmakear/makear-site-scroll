@@ -1,7 +1,4 @@
 @media screen and (max-width: 812px) {
-  .container {
-    padding: 15px;
-  }
   .navbar {
     margin: 10px auto;
     flex-direction: column;
@@ -24,10 +21,6 @@
     right: 10px;
   }
 
-  .mailBtn {
-    display: none;
-  }
-
   .menuBtn {
     width: fit-content;
     margin: 5px;
@@ -39,9 +32,7 @@
     margin: 0;
     padding: 0;
   }
-
-  .menuBtn span:nth-child(1),
-  .menuBtn span:nth-child(2) {
+  .menuBtn .menu {
     display: none;
   }
 
