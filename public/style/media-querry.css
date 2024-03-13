@@ -20,7 +20,9 @@
     top: 0;
     right: 10px;
   }
-
+  .mailBtn {
+    display: none;
+  }
   .menuBtn {
     width: fit-content;
     margin: 5px;
