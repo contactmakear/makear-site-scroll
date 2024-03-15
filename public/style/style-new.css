@@ -26,7 +26,13 @@
 
 body {
   background-color: var(--bg-color);
+<<<<<<< HEAD
   overflow: hidden;
+=======
+  -webkit-transition: background-color 300ms ease;
+  -ms-transition: background-color 300ms ease;
+  transition: background-color 300ms ease;
+>>>>>>> 8b27632058cb999f10e937e7bae2d6c9fced1b1a
 }
 
 /* ! Navbar Start  */
@@ -181,7 +187,8 @@ ul {
   padding: 0px;
   margin: 0px;
 }
-nav ul li {
+nav ul li,
+.menu-overlay-window ul li {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -192,7 +199,7 @@ nav ul li {
 .overlay-container {
   width: 240px;
   position: absolute;
-  top: 120px;
+  top: 75px;
   right: 10px;
   /* overflow: hidden; */
   /* background-color: red !important; */
@@ -221,7 +228,8 @@ nav ul li {
   color: black;
 }
 
-.overlay a {
+.overlay a,
+.menu-overlay-window ul li a {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -242,6 +250,10 @@ nav ul li {
 
 .overlay a:hover {
   background-color: #e5e7fd;
+}
+
+.mobile-contact-btn {
+  display: none;
 }
 
 .activeMenu {
