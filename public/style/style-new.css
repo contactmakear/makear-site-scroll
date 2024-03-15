@@ -26,9 +26,13 @@
 
 body {
   background-color: var(--bg-color);
+<<<<<<< HEAD
+  overflow: hidden;
+=======
   -webkit-transition: background-color 300ms ease;
   -ms-transition: background-color 300ms ease;
   transition: background-color 300ms ease;
+>>>>>>> 8b27632058cb999f10e937e7bae2d6c9fced1b1a
 }
 
 /* ! Navbar Start  */
