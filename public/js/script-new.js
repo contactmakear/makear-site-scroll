@@ -273,8 +273,6 @@ const scroll = () => {
 
     const strokeDashOffset = pathLength * (1 - percentage);
 
-    console.log(percentage);
-
     // topRibbonPath.style.strokeDasharray = `${pathLength}`;
     // topRibbonPath.style.strokeDashoffset = `${strokeDashOffset}`;
 

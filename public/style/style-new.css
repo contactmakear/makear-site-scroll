@@ -427,10 +427,84 @@ nav ul li,
 
 /*! Top-Ribbon Start */
 
-#top-ribbon {
-  overflow: hidden;
+.about {
   position: relative;
+}
+
+#top-ribbon {
+  position: absolute;
   top: 0;
   right: 0;
   width: 100vw;
+  z-index: -1;
+  overflow: hidden;
+}
+
+#top-ribbon path {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.about-title h1 {
+  font-size: 10vw;
+  color: black;
+}
+
+.about-desc {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.about-desc p {
+  display: block;
+  width: 50%;
+  font-size: clamp(1rem, 1.5vw, 3rem);
+}
+
+.aboutBtnContainer {
+  width: 50%;
+  position: relative;
+  margin: 20px 0;
+}
+
+#about-btn button {
+  padding: 15px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 3.4rem;
+
+  cursor: pointer;
+  font-family: "AeonikTRIAL-Bold";
+  color: #2b2e3a;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-video-thumb {
+  width: 50%;
+  position: relative;
+  top: -40px;
+  top: -70px;
+}
+.about-video-thumb video {
+  /* width: 588px;
+  height: 333px; */
+  width: 80%;
+  border-radius: 8px;
+}
+
+.about-video-complete {
+  width: 100%;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.about-video-complete video {
+  width: 80%;
+  margin: auto;
+  border-radius: 8px;
 }
