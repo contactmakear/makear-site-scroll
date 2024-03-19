@@ -42,6 +42,8 @@ const aboutSection = document.querySelector(".about");
 const topRibbon = document.querySelector("#top-ribbon");
 const topRibbonPath = topRibbon.querySelector("path");
 
+const thumbVideo = document.querySelector(".about-video-complete");
+
 let openMenu = false;
 let activeMenu = 0;
 
