@@ -293,3 +293,22 @@ const scroll = () => {
 
 scroll();
 window.addEventListener("scroll", scroll);
+
+window.addEventListener("scroll", function () {
+  var aboutVideoThumb = document.querySelector(".about-video-thumb");
+  var coloredLayer = document.querySelector(
+    ".about-video-thumb .colored-layer"
+  );
+  var viewportHeight = window.innerHeight;
+  var elementTop = aboutVideoThumb.getBoundingClientRect().top;
+
+  if (elementTop <= viewportHeight / 2 + 10) {
+    aboutVideoThumb.style.width = "100%";
+    coloredLayer.classList.remove("visible");
+    aboutVideoThumb.style.top = "30px";
+  } else {
+    aboutVideoThumb.style.width = "40%";
+
+    coloredLayer.classList.add("visible");
+  }
+});
