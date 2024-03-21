@@ -1,0 +1,86 @@
+@media screen and (max-width: 812px) {
+  .navbar {
+    margin: 10px auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .headline {
+    margin: 15px 0;
+    max-width: 600px;
+  }
+
+  .headline p {
+    font-size: 1.4rem;
+  }
+
+  .btns {
+    position: absolute;
+    top: 0;
+    right: 10px;
+  }
+  .mailBtn {
+    display: none;
+  }
+  .menuBtn {
+    width: fit-content;
+    margin: 5px;
+    padding: 15px 17px;
+    z-index: 2;
+  }
+
+  .menuBtn .double-dot {
+    margin: 0;
+    padding: 0;
+  }
+  .menuBtn .menu {
+    display: none;
+  }
+
+  .overlay-container {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 85vw;
+    background-color: transparent;
+    /* overflow-x: hidden; */
+  }
+
+  .overlay {
+    /* transform: scale(0.5); */
+    /* background-color: var(--bg-color); */
+    margin: 0;
+    /* padding: 0; */
+    /* position: absolute;
+    top: 140px;
+    right: 40px; */
+    border-radius: 12px;
+  }
+
+  .overlay a {
+    margin: 2px auto;
+  }
+
+  .mobile-contact-btn {
+    display: flex;
+    width: 100%;
+    border: none;
+    background: #fff;
+    border-radius: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100%) rotate(-8deg);
+    transition: opacity 0.5s ease, visibility 0.5s, transform 0.5s;
+  }
+  .mobile-contact-btn a {
+    text-transform: uppercase;
+    width: 90%;
+    margin: 2px auto;
+    padding: 15px 25px;
+    font-size: 1rem;
+    color: black;
+    border-radius: 40px;
+    text-decoration: none;
+  }
+}
