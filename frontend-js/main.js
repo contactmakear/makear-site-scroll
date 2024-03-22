@@ -2,12 +2,14 @@ import Activate from "./modules/activate";
 import Perspective from "./modules/perspective";
 import Motion from "./modules/motion";
 import HeroThreeJs from "./modules/hero-three";
+import Flag from "./modules/flag"
 
 //new Activate()
 new Perspective();
 
 new Motion();
 new HeroThreeJs();
+new Flag()
 
 const projectThumbnail1 = document.querySelector(".project-thumbnail-1");
 const projectThumbnail2 = document.querySelector(".project-thumbnail-2");

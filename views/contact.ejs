@@ -1,59 +1,80 @@
 <%- include('includes/header.ejs') %>
-<%- include('includes/navbar.ejs') %>
+    <%- include('includes/navbar.ejs') %>
 
-<section>
-    <div class="container">
+        <section>
+            <div class="container">
 
-        <% success.forEach(function(message) { %>
-            <div class="alert alert-success text-center"><%= message %></div>
-        <% }) %>
+                <% success.forEach(function(message) { %>
+                    <div class="alert alert-success text-center">
+                        <%= message %>
+                    </div>
+                    <% }) %>
 
-        <% errors.forEach(function(message) { %>
-            <div class="alert alert-success text-center"><%= message %></div>
-        <% }) %>
+                        <% errors.forEach(function(message) { %>
+                            <div class="alert alert-success text-center">
+                                <%= message %>
+                            </div>
+                            <% }) %>
 
-        <div class="row">
-            <div class="section-wrapper col-md-8 col-xs-12">
-                <div class="section-header">
-                    <h3>Contact Us</h3>
+                                <div class="row">
+                                    <div class="section-wrapper col-md-8 col-xs-12">
+                                        <div class="section-header">
+                                            <h3>Contact Us</h3>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row d-flex justify-content-center ">
+                                    <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
+                                        <div class="email-form">
+                                            <!-- <form id="contactForm" action="/send-email" method="POST"> -->
+                                            <form id="contactForm">
+                                                <div class="name-and-phone">
+                                                    <input class="col-6" type="text" name="name" placeholder="Name*"
+                                                        id="name" required>
+                                                    <input class="col-12" type="tel" name="phone" placeholder="Phone"
+                                                        id="phone">
+                                                </div>
+                                                <div class="email-input">
+                                                    <input class="col-12" type="email" name="email" id="sendEmail"
+                                                        placeholder="Email*" required>
+                                                </div>
+                                                <div class="message-area">
+                                                    <textarea class="col-12" name="message" id="emailMsg" cols="30"
+                                                        rows="3" placeholder="Message"></textarea>
+                                                </div>
+                                                <!-- <button class="g-recaptcha" data-sitekey="6Ld2YCkpAAAAAGBnZHqUKsaWfKa_uKgfqYFUH7Gf" data-callback="onSubmit" id="submitBtn">Submit Details</button> -->
+
+                                                <button class="g-recaptcha"
+                                                    data-sitekey="6Ld2YCkpAAAAAGBnZHqUKsaWfKa_uKgfqYFUH7Gf"
+                                                    data-callback="send" id="submitBtn">Submit
+                                                    Details</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-wrapper">
+                    <div class="phone-number">
+                        <div class="contact-no">
+                            <p><a href="tel:9810745411">9810745411</a></p>
+                            <p><a href="tel:9818051166">9818051166</a></p>
+                        </div>
+                        <!-- <div class="contact-no"><p><a href="tel:9818051166">9818051166</a></p></div> -->
+                    </div>
+                    <div class="address">
+                        <p><a href="https://maps.app.goo.gl/Lzy4F3D8obgKdkZdA">C-14, Sector 6, Noida - 201301</a></p>
+                    </div>
+                    <div class="email">
+                        <p><a href="mailto:contact@makear.ai">contact@makear.ai</a></p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </footer>
 
-        <div class="row d-flex justify-content-center ">
-            <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
-                <div class="email-form">
-                    <form id="contactForm" action="/send-email" method="POST">
-                        <div class="name-and-phone">
-                            <input class="col-6" type="text" name="name" placeholder="Name*" required>
-                            <input class="col-12" type="tel" name="phone" placeholder="Phone" id="phone">
-                        </div>
-                        <div class="email-input">
-                            <input class="col-12" type="email" name="email" id="sendEmail" placeholder="Email*" required>
-                        </div>
-                        <div class="message-area">
-                            <textarea class="col-12" name="message" id="" cols="30" rows="3" placeholder="Message"></textarea>
-                        </div>
-                        <button class="g-recaptcha" data-sitekey="6Ld2YCkpAAAAAGBnZHqUKsaWfKa_uKgfqYFUH7Gf" data-callback="onSubmit" id="submitBtn">Submit Details</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<footer class="footer">
-    <div class="container">
-        <div class="footer-wrapper">
-            <div class="phone-number">
-                <div class="contact-no"><p><a href="tel:9810745411">9810745411</a></p></div>
-                <!-- <div class="contact-no"><p><a href="tel:9818051166">9818051166</a></p></div> -->
-            </div>
-            <div class="address"><p><a href="https://maps.app.goo.gl/Lzy4F3D8obgKdkZdA">C-14, Sector 6, Noida - 201301</a></p></div>
-            <div class="email"><p><a href="mailto:contact@makear.ai">contact@makear.ai</a></p></div>
-        </div>
-    </div>
-</footer>
-
-<%- include('includes/footer.ejs') %>
+        <%- include('includes/footer.ejs') %>

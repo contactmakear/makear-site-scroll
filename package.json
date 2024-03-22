@@ -25,7 +25,7 @@
   },
   "scripts": {
     "dev": "run-p watch ourwebpack",
-    "ourwebpack": "webpack --watch",
+    "ourwebpack": "webpack --watch --mode=development",
     "watch": "nodemon db",
     "start": "node server.js"
   },

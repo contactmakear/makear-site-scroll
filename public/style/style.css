@@ -649,3 +649,8 @@ screen6-content li h4 span {
     padding: 15px 0px;
     font-size: 17px;
 }
+
+section.flag {
+    width: 100vw;
+    height: 100vh;
+}
