@@ -2,10 +2,12 @@
   font-family: "AeonikTRIAL-Regular";
   src: url("../assets/fonts/AeonikTRIAL-Regular.otf");
 }
+
 @font-face {
   font-family: "AeonikTRIAL-Bold";
   src: url("../assets/fonts/AeonikTRIAL-Bold.otf");
 }
+
 @font-face {
   font-family: "AeonikTRIAL-Light";
   src: url("../assets/fonts/AeonikTRIAL-Light.otf");
@@ -43,6 +45,7 @@ body {
 .mobile-menu {
   display: none;
 }
+
 .navbar {
   margin: 50px auto;
   display: flex;
@@ -64,10 +67,12 @@ body {
   font-size: 1.5rem;
   color: #090909;
 }
-.btns {
-  /* scale: .5; */
-  /* opacity: 0; */
-}
+
+/* .btns {
+   scale: .5;
+   opacity: 0; 
+} */
+
 .site-btn {
   padding: 15px 30px;
   font-size: 1rem;
@@ -177,12 +182,14 @@ body {
 .move-down {
   transform: translateY(40px);
 }
+
 ul {
   width: 100%;
   list-style: none;
   padding: 0px;
   margin: 0px;
 }
+
 nav ul li,
 .menu-overlay-window ul li {
   width: 100%;
@@ -273,6 +280,7 @@ nav ul li,
   opacity: 0;
   transition: visibility 0.3s;
 }
+
 .overlay a:hover img {
   visibility: visible;
   opacity: 1;
@@ -302,44 +310,55 @@ nav ul li,
     transform: translateY(0);
     opacity: 1;
   }
+
   25% {
     opacity: 0;
   }
+
   50% {
     transform: translateY(-30px);
     opacity: 0;
   }
+
   51% {
     transform: translateY(30px);
     opacity: 0;
   }
+
   75% {
     opacity: 1;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
   }
 }
+
 @keyframes move-up {
   0% {
     transform: translateY(0);
     opacity: 1;
   }
+
   25% {
     opacity: 0;
   }
+
   50% {
     transform: translateY(-30px);
     opacity: 0;
   }
+
   51% {
     transform: translateY(30px);
     opacity: 0;
   }
+
   75% {
     opacity: 1;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -351,20 +370,25 @@ nav ul li,
     transform: translateY(0);
     opacity: 1;
   }
+
   25% {
     opacity: 0;
   }
+
   50% {
     transform: translateY(30px);
     opacity: 0;
   }
+
   51% {
     transform: translateY(-30px);
     opacity: 0;
   }
+
   75% {
     opacity: 1;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -376,22 +400,153 @@ nav ul li,
     transform: translateY(0);
     opacity: 1;
   }
+
   25% {
     opacity: 0;
   }
+
   50% {
     transform: translateY(30px);
     opacity: 0;
   }
+
   51% {
     transform: translateY(-30px);
     opacity: 0;
   }
+
   75% {
     opacity: 1;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+/*! Top-Ribbon Start */
+
+.about {
+  position: relative;
+}
+
+#top-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  z-index: -1;
+  overflow: hidden;
+}
+
+#top-ribbon path {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.about-title h1 {
+  font-size: 10vw;
+  color: black;
+}
+
+.about-desc {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.about-desc p {
+  display: block;
+  width: 50%;
+  font-size: clamp(1rem, 1.5vw, 3rem);
+}
+
+.aboutBtnContainer {
+  width: 50%;
+  position: relative;
+  margin: 20px 0;
+}
+
+#about-btn button {
+  padding: 15px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 3.4rem;
+
+  cursor: pointer;
+  font-family: "AeonikTRIAL-Bold";
+  color: #2b2e3a;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-video-thumb {
+  width: 40%;
+  position: relative;
+  top: -40px;
+  top: -70px;
+  transition: width 1s, top 1s;
+}
+.about-video-thumb video {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.colored-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0.5s, opacity 0.5s;
+  z-index: 1;
+}
+.visible {
+  visibility: visible;
+  opacity: 0.5;
+}
+
+.about-video-complete {
+  width: 100%;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.about-video-complete video {
+  width: 80%;
+  margin: auto;
+  border-radius: 8px;
+}
+
+.desc {
+  height: 8000px;
+}
+
+#videoAnimationCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Ensure the canvas stays behind other content */
+}
+
+.video-svg-wrapper {
+  width: 100%;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.video-svg-wrapper .plus {
 }
