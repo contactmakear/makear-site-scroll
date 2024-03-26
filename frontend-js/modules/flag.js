@@ -1,52 +1,69 @@
-import * as THREE from 'three';
+import * as THREE from "three";
 
 export default function flag() {
+  const section = document.querySelector(".flag");
 
-    const section = document.querySelector('.flag')
+  const video = document.getElementById("background-video");
 
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  //   const video = document.createElement("video");
+  //   video.src = "../../public/assets/videos/in-progress-video.mp4";
+  //   video.autoplay = true;
+  //   video.loop = true;
+  //   video.muted = true; // Ensure the video plays without sound
+  //   video.setAttribute("crossorigin", "anonymous"); // Set crossorigin attribute to prevent CORS issues
 
-    const renderer = new THREE.WebGLRenderer({
-        alpha: true,
-        antialias: true
-    });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    section.appendChild(renderer.domElement);
+  const texture = new THREE.VideoTexture(video);
 
-    const loader = new THREE.TextureLoader()
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+  );
 
-    const geometry = new THREE.PlaneGeometry(5, 3, 50, 30);
-    const material = new THREE.MeshBasicMaterial({
-        map: loader.load("assets/images/bg-system.png")
-    });
-    const flag = new THREE.Mesh(geometry, material);
-    scene.add(flag);
+  const renderer = new THREE.WebGLRenderer({
+    alpha: true,
+    antialias: true,
+  });
 
-    flag.rotation.set(-0.1, 0, 0)
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  section.appendChild(renderer.domElement);
 
-    camera.position.z = 5;
+  const loader = new THREE.TextureLoader();
 
-    const clock = new THREE.Clock()
-    let v = new THREE.Vector3()
-    let pos = flag.geometry.attributes.position
+  //   const geometry = new THREE.PlaneGeometry(5, 3, 50, 30);
+  const geometry = new THREE.PlaneGeometry(16, 9, 500, 500);
+  const material = new THREE.MeshBasicMaterial({
+    map: texture,
+    side: THREE.DoubleSide,
+  });
+  const flag = new THREE.Mesh(geometry, material);
+  scene.add(flag);
 
-    function animate() {
+  flag.rotation.set(-0.1, 0, 0);
 
-        const t = clock.getElapsedTime()
+  camera.position.z = 15;
 
-        for(let i=0; i<pos.count; i++) {
-            v.fromBufferAttribute(pos, i)
-            const wavex1 = 0.5 * Math.sin(v.x * 2 + t)
-            const wavex2 = 0.25 * Math.sin(v.x * 1 + t * 2)
-            const wavex3 = 0.5 * Math.sin(v.y + t)
+  const clock = new THREE.Clock();
+  let v = new THREE.Vector3();
+  let pos = flag.geometry.attributes.position;
 
-            pos.setZ(i, wavex1 + wavex2 + wavex3 )
-        }
-        pos.needsUpdate = true;
+  function animate() {
+    const t = clock.getElapsedTime();
 
-        requestAnimationFrame(animate);
-        renderer.render(scene, camera);
+    for (let i = 0; i < pos.count; i++) {
+      v.fromBufferAttribute(pos, i);
+      const wavex1 = 0.5 * Math.sin(v.x * 2 + t);
+      const wavex2 = 0.25 * Math.sin(v.x + t * 2);
+      const wavex3 = 0.5 * Math.sin(v.y + t);
+
+      pos.setZ(i, wavex1 + wavex2 + wavex3);
     }
-    animate();
+    pos.needsUpdate = true;
+
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+  }
+  animate();
 }
