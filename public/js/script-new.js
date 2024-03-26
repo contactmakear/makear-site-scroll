@@ -47,11 +47,10 @@ const thumbVideo = document.querySelector(".about-video-complete");
 const aboutVideoThumb = document.querySelector(".about-video-thumb");
 const aboutVideo = document.querySelector("#background-video");
 const videoSvgWrapper = document.querySelectorAll(".video-svg-wrapper");
+const videoPlusSvg = document.querySelectorAll(".video-svg-wrapper svg");
 const coloredLayer = document.querySelector(
   ".about-video-thumb .colored-layer"
 );
-
-console.log(videoSvgWrapper);
 
 let openMenu = false;
 let activeMenu = 0;
@@ -322,28 +321,45 @@ window.addEventListener("scroll", scroll);
 //   }
 // });
 
+let timerId;
+
 window.addEventListener("scroll", function () {
   var viewportHeight = window.innerHeight;
   var elementTop = aboutVideo.getBoundingClientRect().top;
 
-  if (elementTop <= viewportHeight / 2 + 10) {
+  if (elementTop <= viewportHeight / 4) {
     aboutVideoThumb.style.width = "100%";
+    aboutVideo.style.height = "60%";
     coloredLayer.classList.remove("visible");
-    aboutVideoThumb.style.top = "30px"; // Adjust as needed
-    aboutVideoThumb.style.transition = "width 1s ease-out"; // Add transition
-    aboutVideoThumb.style.transform = "translate";
+    aboutVideoThumb.style.transition = "width 1s ease-out , top 1s";
+    document.scrollY = "50px";
 
-    this.setTimeout(() => {
-      videoSvgWrapper.forEach((svg) => {
-        svg.style.visibility = "visible";
-      });
-    }, 1000);
+    if (!timerId) {
+      timerId = setTimeout(() => {
+        videoSvgWrapper.forEach((svg) => {
+          svg.style.visibility = "visible";
+          svg.style.transition = "visibility .5s";
+          videoPlusSvg.forEach((plusSvg) => {
+            plusSvg.style.transform = "rotate(180deg) scale(1)";
+            plusSvg.style.transition = "transform .5s";
+          });
+        });
+      }, 1000);
+    }
   } else {
-    videoSvgWrapper.forEach((svg) => {
-      svg.style.visibility = "hidden";
-    });
     aboutVideoThumb.style.width = "40%";
+    clearTimeout(timerId);
+    timerId = null;
+    videoSvgWrapper.forEach((svg) => {
+      videoPlusSvg.forEach((plusSvg) => {
+        plusSvg.style.transform = "rotate(-180deg) scale(0)";
+        plusSvg.style.transition = "transform 1s";
+      });
+      svg.style.visibility = "hidden";
+      svg.style.transition = "visibility 1.5s";
+    });
+
     coloredLayer.classList.add("visible");
-    aboutVideoThumb.style.transition = "width 1s ease-out"; // Add transition
+    aboutVideoThumb.style.transition = "width 1s ease-out , top 1s";
   }
 });
