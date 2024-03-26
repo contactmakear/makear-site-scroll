@@ -1,3 +1,5 @@
+import featuredProject from "./featured-project.js";
+
 //checking if user is browsing on mobile or not
 window.mobileCheck = function () {
   let check = false;
@@ -50,6 +52,9 @@ const videoSvgWrapper = document.querySelectorAll(".video-svg-wrapper");
 const videoPlusSvg = document.querySelectorAll(".video-svg-wrapper svg");
 const coloredLayer = document.querySelector(
   ".about-video-thumb .colored-layer"
+);
+const featuredProductContainer = document.querySelector(
+  ".featured-projects-container"
 );
 
 let openMenu = false;
@@ -362,4 +367,36 @@ window.addEventListener("scroll", function () {
     coloredLayer.classList.add("visible");
     aboutVideoThumb.style.transition = "width 1s ease-out , top 1s";
   }
+});
+
+featuredProject.map((singleProject) => {
+  // console.log(products);
+
+  let project = document.createElement("div");
+  let projectImg = document.createElement("img");
+  let projectTag = document.createElement("div");
+
+  let projectTitle = document.createElement("div");
+
+  project.classList.add("project");
+
+  projectImg.setAttribute("src", `${singleProject.imgSrc}`);
+  projectImg.setAttribute("alt", `Project Image`);
+
+  projectTag.classList.add("project-tags");
+
+  singleProject.tags.map((tag) => {
+    let projectTagSpan = document.createElement("span");
+    projectTagSpan.textContent = `${tag}`;
+    projectTag.appendChild(projectTagSpan);
+  });
+
+  projectTitle.classList.add("project-title");
+  projectTitle.textContent = `${singleProject.title}`;
+
+  project.appendChild(projectImg);
+  project.appendChild(projectTag);
+  project.appendChild(projectTitle);
+
+  featuredProductContainer.appendChild(project);
 });

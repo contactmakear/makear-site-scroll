@@ -537,7 +537,7 @@ nav ul li,
 }
 
 .desc {
-  height: 8000px;
+  /* height: 8000px; */
 }
 
 .video-svg-wrapper {
@@ -552,3 +552,159 @@ nav ul li,
 
 /* .video-svg-wrapper svg {
 } */
+
+/* ! Featured Projects */
+
+.featured-projects {
+  margin-top: 60px;
+}
+
+.featured-projects .heading {
+  display: flex;
+  align-items: last baseline;
+  justify-content: space-between;
+}
+
+.featured-projects .heading p {
+  width: 223px;
+  font-size: 0.9vw;
+
+  text-transform: uppercase;
+}
+
+.featured-projects .heading h2 {
+  font-size: 8vw;
+}
+
+.featured-projects-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.project {
+  width: 45%;
+  margin: 20px 0;
+  border-radius: 12px;
+}
+
+.project img {
+  width: 100%;
+}
+
+.project .project-tags {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 1rem 0;
+  margin-bottom: 0.3rem;
+}
+
+.project .project-tags span {
+  font-size: 0.9vw;
+  text-transform: uppercase;
+}
+
+.project .project-tags span::after {
+  content: url("/assets/images-new/single-dot-dark.svg");
+  margin: 0 10px;
+  display: inline-block;
+  width: 3px;
+  position: relative;
+  top: 0px;
+}
+
+.project .project-tags span:last-child::after {
+  content: none;
+}
+
+.project-title {
+  margin: 0;
+  font-size: 3vw;
+  text-transform: capitalize;
+}
+
+/*! Mission */
+
+.mission {
+  min-height: 100vh;
+  margin: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mission p {
+  font-size: 8vw;
+  text-transform: capitalize;
+  line-height: 1;
+}
+
+/*! Mission */
+
+.vision .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vision .img,
+.vision .vision-desc {
+  width: 50%;
+}
+
+.vision img {
+  width: 100%;
+}
+
+.vision .vision-desc p {
+  width: 70%;
+}
+
+.vision .vision-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.vision .vision-desc p {
+  font-size: 1.5em;
+}
+
+/*! Collaborate */
+
+.collaborate {
+  margin: 100px;
+}
+
+.svgWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.collaborate-text-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.collaborate-text-container .subtitle {
+  line-height: 1.4;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+.collaborate-text-container .title {
+  /* font-size: clamp(0.875rem, 1vw, 2rem); */
+  font-size: 128px;
+  line-height: 145.92px;
+  width: 600px;
+}
