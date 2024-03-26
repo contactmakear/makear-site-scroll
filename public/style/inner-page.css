@@ -225,7 +225,17 @@ section {
 .client-logos img{
     width: 60%;
 }
-
+.contact-email a{
+    color: #DF1D4E;
+    opacity: .5;
+}
+.contact-email a:hover{
+    opacity: 1;
+}
+.contact-email, .reach-us-at {
+    color: #DF1D4E;
+    text-align: center;
+}
 .footer {
     background-color: #DF1D4E;
     margin-bottom: 0px;
