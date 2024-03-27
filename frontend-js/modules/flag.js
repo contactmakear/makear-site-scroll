@@ -3,24 +3,8 @@ import * as THREE from "three";
 export default function flag() {
   const section = document.querySelector(".flag");
 
-  const video = document.getElementById("background-video");
-
-  //   const video = document.createElement("video");
-  //   video.src = "../../public/assets/videos/in-progress-video.mp4";
-  //   video.autoplay = true;
-  //   video.loop = true;
-  //   video.muted = true; // Ensure the video plays without sound
-  //   video.setAttribute("crossorigin", "anonymous"); // Set crossorigin attribute to prevent CORS issues
-
-  const texture = new THREE.VideoTexture(video);
-
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000
-  );
+  const camera = new THREE.PerspectiveCamera(75,window.innerWidth / window.innerHeight, 0.1, 1000);
 
   const renderer = new THREE.WebGLRenderer({
     alpha: true,
@@ -30,20 +14,20 @@ export default function flag() {
   renderer.setSize(window.innerWidth, window.innerHeight);
   section.appendChild(renderer.domElement);
 
-  const loader = new THREE.TextureLoader();
+  const loader = new THREE.TextureLoader()
 
-  //   const geometry = new THREE.PlaneGeometry(5, 3, 50, 30);
-  const geometry = new THREE.PlaneGeometry(16, 9, 500, 500);
+  const geometry = new THREE.PlaneGeometry(5, 3, 50, 30);
+  
   const material = new THREE.MeshBasicMaterial({
-    map: texture,
-    side: THREE.DoubleSide,
+    map: loader.load("assets/images/why-makear-office-team-noida.png")
   });
+
   const flag = new THREE.Mesh(geometry, material);
   scene.add(flag);
 
   flag.rotation.set(-0.1, 0, 0);
 
-  camera.position.z = 15;
+  camera.position.z = 5;
 
   const clock = new THREE.Clock();
   let v = new THREE.Vector3();
