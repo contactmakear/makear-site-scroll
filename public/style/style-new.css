@@ -742,20 +742,48 @@ nav ul li,
   width: 50%;
 }
 
-.footer-top-contact .address {
+.footer-top-contact .addressContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  width: max-content;
 }
 
 .social-links a {
   text-decoration: none;
   color: black;
+  height: 100%;
 }
 
 .social-links > * {
   margin-bottom: 50px;
+}
+
+.social-links .link a {
+  padding-left: 20px;
+}
+
+.social-links .email {
+  position: relative;
+  height: 100%;
+}
+.social-links .email::after {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  transform: scaleX(0);
+  transform-origin: left;
+  height: 1px;
+  transition: 0.3s ease;
+}
+
+.social-links .email:hover::after {
+  transform: scaleX(1);
 }
 
 .social-links .social {

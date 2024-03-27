@@ -400,3 +400,24 @@ featuredProject.map((singleProject) => {
 
   featuredProductContainer.appendChild(project);
 });
+
+//! Footer
+const addressContainer = document.querySelector(".addressContainer");
+const spans = addressContainer.querySelectorAll("span");
+
+function moveSpansToEnd() {
+  spans.forEach((span) => {
+    const spanWidth = span.offsetWidth;
+    const parentWidth = addressContainer.offsetWidth;
+
+    const translation = `calc(${parentWidth}px - ${spanWidth}px)`;
+    span.style.transform = `translateX(${translation})`;
+    span.style.transition = `.6s transform cubic-bezier(.35,0,0,1)`;
+  });
+}
+addressContainer.addEventListener("mouseenter", moveSpansToEnd);
+addressContainer.addEventListener("mouseleave", () => {
+  spans.forEach((span) => {
+    span.style.transform = "translateX(0)";
+  });
+});
