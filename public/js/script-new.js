@@ -42,7 +42,7 @@ const mobileContactBtn = document.querySelector(".mobile-contact-btn");
 
 const aboutSection = document.querySelector(".about");
 const topRibbon = document.querySelector("#top-ribbon");
-const topRibbonPath = topRibbon.querySelector("path");
+const topRibbonPath = topRibbon.querySelector("#top-ribbon path");
 
 const thumbVideo = document.querySelector(".about-video-complete");
 
@@ -56,6 +56,11 @@ const coloredLayer = document.querySelector(
 const featuredProductContainer = document.querySelector(
   ".featured-projects-container"
 );
+
+const bottomRibbon = document.querySelector("#bottom-ribbon");
+const bottomRibbonPath = document.querySelector("#bottom-ribbon path");
+
+const missionSection = document.querySelector(".mission");
 
 let openMenu = false;
 let activeMenu = 0;
@@ -243,88 +248,50 @@ function toggleMenuSwitch() {
   }
 }
 
-// const scroll = () => {
-//   const distance = window.scrollY;
-//   const halfViewportHeight = window.innerHeight / 2;
-//   const svgContainerPosition = aboutSection.getBoundingClientRect().top;
-//   const startAnimationPosition = halfViewportHeight;
-
-//   if (svgContainerPosition <= startAnimationPosition) {
-//     const distanceFromAnimationStart =
-//       startAnimationPosition - svgContainerPosition;
-
-//     const totalDistance = topRibbon.clientHeight - startAnimationPosition;
-
-//     const percentage = distanceFromAnimationStart / totalDistance;
-
-//     const pathLength = topRibbonPath.getTotalLength();
-
-//     const strokeDashOffset = pathLength * (1 - percentage);
-
-//     topRibbonPath.style.strokeDasharray = `${pathLength}`;
-//     topRibbonPath.style.strokeDashoffset = `${strokeDashOffset}`;
-//   }
-// };
-
-// scroll();
-// window.addEventListener("scroll", scroll);
-
-const scroll = () => {
+const scroll = (container, ribbon, ribbonPath) => {
   const distance = window.scrollY;
   const halfViewportHeight = window.innerHeight / 2;
-  const svgContainerPosition = aboutSection.getBoundingClientRect().top;
+  const svgContainerPosition = container.getBoundingClientRect().top;
   const startAnimationPosition = halfViewportHeight;
 
   if (svgContainerPosition <= startAnimationPosition) {
-    topRibbon.style.visibility = "visible";
+    ribbon.style.visibility = "visible";
     const distanceFromAnimationStart =
       startAnimationPosition - svgContainerPosition;
 
-    const totalDistance = topRibbon.clientHeight - startAnimationPosition;
+    const totalDistance = ribbon.clientHeight - startAnimationPosition;
 
     const percentage = distanceFromAnimationStart / totalDistance;
 
-    const pathLength = topRibbonPath.getTotalLength();
+    const pathLength = ribbonPath.getTotalLength();
 
     const strokeDashOffset = pathLength * (1 - percentage);
 
-    // topRibbonPath.style.strokeDasharray = `${pathLength}`;
-    // topRibbonPath.style.strokeDashoffset = `${strokeDashOffset}`;
+    // ribbonPath.style.strokeDasharray = `${pathLength}`;
+    // ribbonPath.style.strokeDashoffset = `${strokeDashOffset}`;
 
     // Stop animating once complete ribbon appears
     if (percentage <= 1) {
-      topRibbonPath.style.strokeDasharray = `${pathLength}`;
-      topRibbonPath.style.strokeDashoffset = `${strokeDashOffset}`;
+      ribbonPath.style.strokeDasharray = `${pathLength}`;
+      ribbonPath.style.strokeDashoffset =
+        ribbon === topRibbon ? `${strokeDashOffset}` : `${-strokeDashOffset}`;
     } else {
-      topRibbonPath.style.strokeDasharray = 0;
-      topRibbonPath.style.strokeDashoffset = 0;
+      ribbonPath.style.strokeDasharray = 0;
+      ribbonPath.style.strokeDashoffset = 0;
     }
   } else {
-    topRibbon.style.visibility = "hidden";
+    ribbon.style.visibility = "hidden";
   }
 };
 
-scroll();
-window.addEventListener("scroll", scroll);
+scroll(aboutSection, topRibbon, topRibbonPath);
+scroll(missionSection, bottomRibbon, bottomRibbonPath);
 
-// window.addEventListener("scroll", function () {
-//   var aboutVideoThumb = document.querySelector(".about-video-thumb");
-//   var coloredLayer = document.querySelector(
-//     ".about-video-thumb .colored-layer"
-//   );
-//   var viewportHeight = window.innerHeight;
-//   var elementTop = aboutVideoThumb.getBoundingClientRect().top;
-
-//   if (elementTop <= viewportHeight / 2 + 10) {
-//     aboutVideoThumb.style.width = "100%";
-//     coloredLayer.classList.remove("visible");
-//     aboutVideoThumb.style.top = "30px";
-//   } else {
-//     aboutVideoThumb.style.width = "40%";
-
-//     coloredLayer.classList.add("visible");
-//   }
-// });
+// window.addEventListener("scroll", scroll);
+window.addEventListener("scroll", () => {
+  scroll(aboutSection, topRibbon, topRibbonPath);
+  scroll(missionSection, bottomRibbon, bottomRibbonPath);
+});
 
 let timerId;
 
@@ -370,8 +337,6 @@ window.addEventListener("scroll", function () {
 });
 
 featuredProject.map((singleProject) => {
-  // console.log(products);
-
   let project = document.createElement("div");
   let projectImg = document.createElement("img");
   let projectTag = document.createElement("div");

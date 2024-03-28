@@ -557,6 +557,7 @@ nav ul li,
 
 .featured-projects {
   margin-top: 60px;
+  position: relative;
 }
 
 .featured-projects .heading {
@@ -625,6 +626,11 @@ nav ul li,
   text-transform: capitalize;
 }
 
+#bottom-ribbon {
+  position: absolute;
+  z-index: -5;
+}
+
 /*! Mission */
 
 .mission {
@@ -641,7 +647,7 @@ nav ul li,
   line-height: 1;
 }
 
-/*! Mission */
+/*! Vision */
 
 .vision .container {
   display: flex;
